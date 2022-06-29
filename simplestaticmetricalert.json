@@ -131,8 +131,8 @@
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
-                    "actionGroupName": "defaultActionGroup2",
-                    "actionGroupShortName": "actionGrp2"
+                    "actionGroupName": { "value": "defaultActionGroup2" },
+                    "actionGroupShortName": { "value": "actionGrp2" }
                 }
             }
         },
