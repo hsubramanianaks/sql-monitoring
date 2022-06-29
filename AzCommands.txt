@@ -4,13 +4,13 @@ az deployment group create --resource-group "sqlhsubramaebld57032582" --template
 
 az deployment group create --name dtupercentage --resource-group "sqlhsubramaebld57032582" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/dtupercentagealert.parameters.json"
 
-az deployment group create --name deadlock --resource-group "sqlhsubramaebld56857052" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/deadlockalerts.parameters.json"
+az deployment group create --name deadlock --resource-group "sqlhsubramaebld57032582" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/deadlockalerts.parameters.json"
 
-az deployment group create --name failedconnections --resource-group "sqlhsubramaebld56857052" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/failedconnectionsalert.parameters.json"
+az deployment group create --name failedconnections --resource-group "sqlhsubramaebld57032582" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/failedconnectionsalert.parameters.json"
 
-az deployment group create --name successfulconnections --resource-group "sqlhsubramaebld56857052" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/successfulconnectionsalert.parameters.json"
+az deployment group create --name successfulconnections --resource-group "sqlhsubramaebld57032582" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/successfulconnectionsalert.parameters.json"
 
-az deployment group create --name blockedbyfirewall --resource-group "sqlhsubramaebld56857052" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/blockedbyfirewallalert.parameters.json"
+az deployment group create --name blockedbyfirewall --resource-group "sqlhsubramaebld57032582" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/blockedbyfirewallalert.parameters.json"
 
 
 az deployment group create --resource-group "sqlhsubramaebld57032582" --template-uri "https://raw.githubusercontent.com/hsubramanianaks/sql-monitoring/main/simplestaticmetricalert.json" --parameters "https://raw.githubusercontent.com/hsubramanianaks/sql-monitoring/main/dtupercentagealert.parameters.json"

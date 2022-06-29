@@ -15,7 +15,7 @@
             "value": true
         },
         "resourceId": {
-            "value": "/subscriptions/8ecadfc9-d1a3-4ea4-b844-0d9f87e4d7c8/resourceGroups/sqlhsubramaebld56857052/providers/Microsoft.Sql/servers/sqlphsubramaebld56857052"
+            "value": "/subscriptions/8ecadfc9-d1a3-4ea4-b844-0d9f87e4d7c8/resourceGroups/sqlhsubramaebld57032582/providers/Microsoft.Sql/servers/sqlphsubramaebld57032582"
         },
         "metricName": {
             "value": "dtu_consumption_percent"
