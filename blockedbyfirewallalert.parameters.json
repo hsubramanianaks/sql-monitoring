@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "alertName": {
+            "value": "Blocked by firewall detected"
+        },
+        "alertDescription": {
+            "value": "Blocked by firewall detected"
+        },
+        "alertSeverity": {
+            "value":4
+        },
+        "isEnabled": {
+            "value": true
+        },
+        "resourceId": {
+            "value": "/subscriptions/8ecadfc9-d1a3-4ea4-b844-0d9f87e4d7c8/resourceGroups/sqlhsubramaebld56857052/providers/Microsoft.Sql/servers/sqlphsubramaebld56857052"
+        },
+        "metricName": {
+            "value": "blocked_by_firewall"
+        },
+        "operator": {
+          "value": "GreaterThan"
+        },
+        "threshold": {
+            "value": "10"
+        },
+        "timeAggregation": {
+            "value": "Count"
+        },
+        "windowSize":{
+            "value": "PT5M"
+        },
+        "evaluationFrequency":{
+            "value": "PT5M"
+        },
+        "actionGroupId": {
+            "value": "/subscriptions/8ecadfc9-d1a3-4ea4-b844-0d9f87e4d7c8/resourcegroups/sqlhsubramaebld56857052/providers/microsoft.insights/actiongroups/hcp-sql"
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "alertName": {
+            "value": "SQL DTU Percentage greater than 80 percentage"
+        },
+        "alertDescription": {
+            "value": "SQL DTU Percentage greater than 80 percentage"
+        },
+        "alertSeverity": {
+            "value":4
+        },
+        "isEnabled": {
+            "value": true
+        },
+        "resourceId": {
+            "value": "/subscriptions/8ecadfc9-d1a3-4ea4-b844-0d9f87e4d7c8/resourceGroups/sqlhsubramaebld56857052/providers/Microsoft.Sql/servers/sqlphsubramaebld56857052"
+        },
+        "metricName": {
+            "value": "dtu_consumption_percent"
+        },
+        "operator": {
+          "value": "GreaterThan"
+        },
+        "threshold": {
+            "value": "80"
+        },
+        "timeAggregation": {
+            "value": "Average"
+        },
+        "windowSize":{
+            "value": "PT5M"
+        },
+        "evaluationFrequency":{
+            "value": "PT5M"
+        }
+    }
+}

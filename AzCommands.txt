@@ -1,0 +1,13 @@
+az account set --subscription "8ecadfc9-d1a3-4ea4-b844-0d9f87e4d7c8"
+
+az deployment group create --resource-group "sqlhsubramaebld57032582" --template-file "/home/hsubramanian/repos/sqlmonitoring/createactiongroup.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/createactiongroup.parameters.json"
+
+az deployment group create --name dtupercentage --resource-group "sqlhsubramaebld57032582" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/dtupercentagealert.parameters.json"
+
+az deployment group create --name deadlock --resource-group "sqlhsubramaebld56857052" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/deadlockalerts.parameters.json"
+
+az deployment group create --name failedconnections --resource-group "sqlhsubramaebld56857052" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/failedconnectionsalert.parameters.json"
+
+az deployment group create --name successfulconnections --resource-group "sqlhsubramaebld56857052" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/successfulconnectionsalert.parameters.json"
+
+az deployment group create --name blockedbyfirewall --resource-group "sqlhsubramaebld56857052" --template-file "/home/hsubramanian/repos/sqlmonitoring/simplestaticmetricalert.json" --parameters "/home/hsubramanian/repos/sqlmonitoring/blockedbyfirewallalert.parameters.json"

@@ -1,0 +1,59 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "metricAlerts_HCP_SQL_CPU_USAGE_IS_HIGH_name": {
+            "defaultValue": "HCP SQL CPU USAGE IS HIGH",
+            "type": "String"
+        },
+        "servers_sqlphsubramaebld56857052_externalid": {
+            "defaultValue": "/subscriptions/8ecadfc9-d1a3-4ea4-b844-0d9f87e4d7c8/resourceGroups/sqlhsubramaebld56857052/providers/Microsoft.Sql/servers/sqlphsubramaebld56857052",
+            "type": "String"
+        },
+        "actiongroups_hari_sql_alert_externalid": {
+            "defaultValue": "/subscriptions/8ecadfc9-d1a3-4ea4-b844-0d9f87e4d7c8/resourceGroups/sqlhsubramaebld56857052/providers/microsoft.insights/actiongroups/hari-sql-alert",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "microsoft.insights/metricAlerts",
+            "apiVersion": "2018-03-01",
+            "name": "[parameters('metricAlerts_HCP_SQL_CPU_USAGE_IS_HIGH_name')]",
+            "location": "global",
+            "properties": {
+                "description": "[parameters('metricAlerts_HCP_SQL_CPU_USAGE_IS_HIGH_name')]",
+                "severity": 4,
+                "enabled": true,
+                "scopes": [
+                    "[concat(parameters('servers_sqlphsubramaebld56857052_externalid'), '/databases/regionaldbwestus2')]"
+                ],
+                "evaluationFrequency": "PT5M",
+                "windowSize": "PT5M",
+                "criteria": {
+                    "allOf": [
+                        {
+                            "threshold": 0.5,
+                            "name": "Metric1",
+                            "metricNamespace": "Microsoft.Sql/servers/databases",
+                            "metricName": "cpu_percent",
+                            "operator": "GreaterThan",
+                            "timeAggregation": "Average",
+                            "criterionType": "StaticThresholdCriterion"
+                        }
+                    ],
+                    "odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"
+                },
+                "autoMitigate": true,
+                "targetResourceType": "Microsoft.Sql/servers/databases",
+                "actions": [
+                    {
+                        "actionGroupId": "[parameters('actiongroups_hari_sql_alert_externalid')]",
+                        "webHookProperties": {}
+                    }
+                ]
+            }
+        }
+    ]
+}
