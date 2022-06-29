@@ -116,6 +116,20 @@
             "metadata": {
                 "description": "how often the metric alert is evaluated represented in ISO 8601 duration format"
             }
+        },
+        "actionGroupName": {
+            "type": "string",
+            "defaultValue": "actionGroup2",
+            "metadata": {
+                "description": "Unique name (within the Resource Group) for the Action group."
+            }
+        },
+        "actionGroupShortName": {
+            "type": "string",
+            "defaultValue":"grp2",
+            "metadata": {
+                "description": "Short name (maximum 12 characters) for the Action group."
+            }
         }
     },
     "variables": {},
@@ -131,8 +145,8 @@
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
-                    "actionGroupName": { "value": "defaultActionGroup2" },
-                    "actionGroupShortName": { "value": "actionGrp2" }
+                    "actionGroupName": { "value": "[parameters('actionGroupName')]" },
+                    "actionGroupShortName": { "value": "[parameters('actionGroupShortName')]" }
                 }
             }
         },
